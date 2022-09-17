@@ -2,7 +2,7 @@ print('Welcome to the tip calculator!')
 try:
     bill = float(input('What was the total bill? $'))
 except ValueError:
-    print('Sorry, we need a number here.')
+    print('Sorry, enter a valid number.')
     bill = float(input('What was the total bill? '))
 
 
@@ -18,7 +18,7 @@ if percentage_tip == 15:
 try:
     people_bill = int(input('How many people to split the bill? '))
 except ValueError:
-    print('We need a number here.')
+    print('I didn\'t quite understand that.')
     people_bill = int(input('How many people to split the bill? '))
 
 
