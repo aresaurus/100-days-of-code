@@ -29,9 +29,9 @@ scissors = '''
 '''
 # First, some functions to determine the player and computer moves and who won (or if it's a tie).
 def player_turn(n):
-    if n == 0:
+    if n == 1:
         return rock
-    elif n == 1:
+    elif n == 2:
         return paper
     else:
         return scissors
@@ -58,12 +58,11 @@ loses_to = {
 }
 
 # Let's ask the user for their choice of move and use a while loop till they enter a valid value.
-choices = [0, 1, 2]
-choice = int(input('What do you choose? Type 0 for Rock, type 1 for Paper or type 2 for Scissors.\n'))
-while choice not in choices:
+choice = int(input('What do you choose? Type 1 for Rock, type 2 for Paper or type 3 for Scissors.\n'))
+while choice not in range(1,4):
     choice = int(input('Please enter a value between 0 and 2.\n'))
-    if choice in range(0,3):
-        print(f'You chose {player_turn(choice)}')
+print(f'You chose {player_turn(choice)}')
+        
 
 # The computer move will be chosen randomly using the random module. 
 computer_choice = random.randint(0,2)
