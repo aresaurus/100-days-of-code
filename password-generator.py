@@ -7,11 +7,11 @@ symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 # Order not randomised:
 def not_randomised(num_letters, num_symbols, num_numbers):
     password = ''
-    for i in range(0, num_letters):
+    for char in range(0, num_letters):
         password += random.choice(letters)
-    for i in range(0, num_symbols):
+    for char in range(0, num_symbols):
         password += random.choice(symbols)
-    for i in range(0, num_numbers):
+    for char in range(0, num_numbers):
         password += random.choice(numbers)
     
     return f'Here\'s your password: {password}'
@@ -19,11 +19,11 @@ def not_randomised(num_letters, num_symbols, num_numbers):
 # Order randomised:
 def randomised_order(num_letters, num_symbols, num_numbers):
     list_elements = ''
-    for i in range(0, num_letters):
+    for char in range(0, num_letters):
         list_elements += random.choice(letters)
-    for i in range(0, num_symbols):
+    for char in range(0, num_symbols):
         list_elements += random.choice(symbols)
-    for i in range(0, num_numbers):
+    for char in range(0, num_numbers):
         list_elements += random.choice(numbers)
 
     password = ''.join(random.sample(list_elements, len(list_elements)))
@@ -40,7 +40,7 @@ option = int(input('You can choose between having the characters in order (i.e.,
 
 while option not in range(1,3):
     option = int(input('Enter a valid value.\n'))
-    
+
 if option == 1:
     print(not_randomised(nr_letters, nr_symbols, nr_numbers))
 else:
